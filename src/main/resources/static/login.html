@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>登录</title>
+</head>
+<body>
+<LINK href="/bootstrap-3.3.7/css/bootstrap.css" rel="stylesheet">
+<script src="/jquery/jquery-3.4.1.js"></script>
+<script src="/bootstrap-3.3.7/js/bootstrap.js"></script>
+<script src="/js/md5.js"></script>
+<!--<nav class="navbar navbar-default navbar-fixed-top">-->
+    <!--<div class="container">-->
+        <!--<div class="navbar-header">-->
+            <!--<a href="index.html" class="navbar-brand">个人博客</a>-->
+        <!--</div>-->
+
+        <!--<ul class="nav navbar-nav">-->
+            <!--<li><a href="index.html">首页</a></li>-->
+            <!--<li><a href="#">资料</a></li>-->
+            <!--&lt;!&ndash;<li><a href="#">试试</a></li>&ndash;&gt;-->
+            <!--<li><a href="login.html">资讯</a></li>-->
+            <!--<li><a href="#" class="inline">文件</a></li>-->
+        <!--</ul>-->
+        <!--<ul class="nav navbar-nav navbar-right">-->
+            <!--<li><a href="login.html">登录</a></li>-->
+            <!--<li><a href="register.html">注册</a></li>-->
+            <!--<li><a href="#" id="userImg" style="display: none">头像</a></li>-->
+            <!--<li><a href="#" id="nikeName" style="display: none">用户名</a></li>-->
+            <!--<li><a href="index.html" id="loginOut" style="display: none">退出</a></li>-->
+        <!--</ul>-->
+    <!--</div>-->
+<!--</nav>-->
+<nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+        <div class="navbar-header">
+            <a href="#" class="navbar-brand">个人博客</a>
+        </div>
+
+        <ul class="nav navbar-nav">
+            <li><a href="index.html">首页</a></li>
+            <li><a href="#">资料</a></li>
+            <!--<li><a href="#">试试</a></li>-->
+            <li><a href="#">资讯</a></li>
+            <li><a href="#" class="inline">文件</a></li>
+        </ul>
+        <!--<ul class="nav navbar-nav navbar-right">-->
+            <!--<li><a href="login.html" id="login"  style="display: none">登录</a></li>-->
+            <!--<li><a href="register.html" id="register"  style="display: none">注册</a></li>-->
+
+            <!--&lt;!&ndash;登录后弹出&ndash;&gt;-->
+            <!--<li id="user">-->
+                <!--<label class="dropdown" style="margin-top: 8px">-->
+                    <!--<label class="btn dropdown-toggle" id="username" data-toggle="dropdown">-->
+
+                    <!--</label>-->
+                    <!--<ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">-->
+                        <!--<li role="presentation">-->
+                            <!--<a role="menuitem" tabindex="-1" href="#">个人中心</a>-->
+                        <!--</li>-->
+                        <!--<li role="presentation">-->
+                            <!--<a role="menuitem" tabindex="-1" href="#">我的博客</a>-->
+                        <!--</li>-->
+                        <!--<li role="presentation">-->
+                            <!--<a role="menuitem" tabindex="-1" href="#">消息</a>-->
+                        <!--</li>-->
+                        <!--<li role="presentation" class="divider"></li>-->
+                        <!--<li role="presentation">-->
+                            <!--<a id="loginOut" role="menuitem" tabindex="-1" href="#">退出</a>-->
+                        <!--</li>-->
+                    <!--</ul>-->
+
+                <!--</label>-->
+            <!--</li>-->
+        <!--</ul>-->
+
+    </div>
+</nav>
+<div class="text-center">
+
+
+    <form class="form-horizontal text-center" style="margin: 200px;">
+        <div class="form-group"><h3><label class="label label-default">用户登录</label></h3></div>
+        <label for="account" class="col-sm-5 control-label">用户名:</label>
+        <div class="col-sm-7 form-group has-feedback">
+
+            <input type="text" class="form-control" id="account" style=";width: 250px;" required>
+
+
+        </div>
+        <!--<label class="text-right " id="msg"></label>-->
+        <label for="password" class="col-sm-5 control-label">密码:</label>
+        <div class="col-sm-7 form-group">
+            <input type="password" class="form-control" id="password" style="width: 250px" required>
+
+        </div>
+        <div class="text-center col-sm-12 form-group">
+            <label id="msg" style="color: #ac2925"></label>
+        </div>
+
+        <div class="text-center col-sm-12 form-group">
+            <button id="login" type="button" class="btn btn-primary">登录</button>
+        </div>
+
+    </form>
+</div>
+
+<script>
+    $(document).ready(function () {
+        $("body").keydown(function () {
+            if (event.keyCode == 13) {
+                $("#login").click();
+            }
+        })
+
+        $("#account").blur(function () {
+            // console.log()
+            // if ($("#password").val()=="" || $("#password").val()==null ){
+            //     return;
+            // }else if ($("#account").val() == "") {
+            //     return;
+            // }
+            // if ($("#account").val() != null && $("#account").val() != "") {
+            var data = {
+                "account": $("#account").val(),
+                // "password": $("#password").val()
+            };
+            $.ajax({
+                type: "POST",
+                url: "/user/checkAccount",
+                dataType: "json",
+                contentType: "application/json",
+                data: JSON.stringify(data),
+
+                success: function (data) {
+                    console.log("请求成功" + data.code + "," + data.msg)
+                    if (data.code != 200) {
+                        // $("#msg").html(data.msg);
+                        return;
+                    }
+                    if (data.code == 200) {
+
+                        $("#msg").html(data.msg);
+                    }
+
+                },
+                error: function (data) {
+                    console.log("错误")
+                }
+            })
+            // } else {
+            //     $("#msg").html("请输入用户名");
+            //     return;
+            // }
+        })
+        $("#login").click(function () {
+
+            var data = {
+                "account": $("#account").val(),
+                "password": hex_md5($("#password").val())
+            };
+            if ($("#account").val() == "") {
+                $("#msg").html("请输入用户名");
+                return;
+            }
+            $.ajax({
+                    url: "/user/login",
+                    type: "POST",
+                    dataType: "json",
+                    contentType: "application/json",
+                    data: JSON.stringify(data),
+                    success: function (data) {
+                        console.log("请求成功" + data.code + "," + data.msg)
+                        if (data.code != 200) {
+                            $("#msg").html(data.msg);
+                        }
+                        if (data.code == 200) {
+                            window.sessionStorage.setItem("data", JSON.stringify(data));
+                            window.location = "index.html";
+                        }
+                    }
+                }
+            )
+
+        })
+
+        $("#account").focus(function () {
+            $("#msg").html("");
+        })
+
+    })
+
+</script>
+</body>
+</html>

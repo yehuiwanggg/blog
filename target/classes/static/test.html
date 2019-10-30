@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<LINK href="/bootstrap-3.3.7/css/bootstrap.css" rel="stylesheet">
+<script src="/jquery/jquery-3.4.1.js"></script>
+<script src="/bootstrap-3.3.7/js/bootstrap.js"></script>
+<body>
+
+
+<ul id="myTab" class="nav nav-tabs">
+    <li class="active">
+        <a href="#home" data-toggle="tab">
+            登录
+        </a>
+    </li>
+    <li><a href="#ios" data-toggle="tab">注册</a></li>
+
+</ul>
+<div id="myTabContent" class="tab-content">
+    <div class="tab-pane fade in active" id="home">
+        <form class="form-horizontal">
+            <label for="account" class="col-sm-3 control-label">用户名:</label>
+            <div class="col-sm-9 form-group has-feedback">
+
+                <input type="text" class="form-control" id="account" style=";width: 250px;">
+
+
+            </div>
+            <!--<label class="text-right " id="msg"></label>-->
+            <label for="password" class="col-sm-3 control-label">密码:</label>
+            <div class="col-sm-9 form-group">
+                <input type="password" class="form-control" id="password" style="width: 250px">
+
+            </div>
+            <div class="text-center col-sm-12 form-group">
+                <label class="msg" style="color: #ac2925"></label>
+            </div>
+            <div class="col-xs-12">
+                <button>登录</button>
+            </div>
+
+        </form>
+    </div>
+    <div class="tab-pane fade" id="ios">
+        <form class="form-horizontal">
+            <label for="account" class="col-sm-3 control-label">用户名:</label>
+            <div class="col-sm-9 form-group has-feedback">
+
+                <input type="text" class="form-control" id="registeraccount" style=";width: 250px;">
+
+
+            </div>
+            <!--<label class="text-right " id="msg"></label>-->
+            <label for="password" class="col-sm-3 control-label">密码:</label>
+            <div class="col-sm-9 form-group">
+                <input type="password" class="form-control" id="registerpassword" style="width: 250px">
+
+            </div>
+            <div class="text-center col-sm-12 form-group">
+                <label class="msg" style="color: #ac2925"></label>
+            </div>
+
+            <div class="col-xs-12">
+                <button>注册</button>
+            </div>
+        </form>
+    </div>
+
+</div>
+</body>
+</html>

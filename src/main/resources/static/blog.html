@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<LINK href="/bootstrap-3.3.7/css/bootstrap.css" rel="stylesheet">
+<script src="/jquery/jquery-3.4.1.js"></script>
+<script src="/bootstrap-3.3.7/js/bootstrap.js"></script>
+<script src="/js/md5.js"></script>
+<script src="/tinymce/tinymce.min.js"></script>
+<script src="js/navbar.js"></script>
+<script src="js/blogdata.js"></script>
+<link href="css/style.css" rel="stylesheet">
+<body>
+
+<nav class="navbar navbar-default">
+    <div class="container">
+        <div class="navbar-header">
+            <a href="#" class="navbar-brand">个人博客</a>
+        </div>
+
+        <ul class="nav navbar-nav">
+            <li><a href="index.html">首页</a></li>
+            <li><a href="#">资料</a></li>
+            <!--<li><a href="#">试试</a></li>-->
+            <li><a href="#">资讯</a></li>
+            <li><a href="#" class="inline">文件</a></li>
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+            <li><a id="openLoginModel" data-toggle="modal" data-target="#loginModal"
+                   style="margin-top: 8px;cursor: pointer;display: none">登录/注册</a></li>
+
+            <!--登录后弹出-->
+            <li id="user">
+                <label class="dropdown" style="margin-top: 8px">
+                    <label class="btn dropdown-toggle" id="username" data-toggle="dropdown">
+
+                    </label>
+                    <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
+                        <li role="presentation">
+                            <a role="menuitem" tabindex="-1" href="personal.html">个人中心</a>
+                        </li>
+                        <li role="presentation">
+                            <a role="menuitem" tabindex="-1" href="#">我的博客</a>
+                        </li>
+                        <li role="presentation">
+                            <a role="menuitem" tabindex="-1" href="#">消息</a>
+                        </li>
+                        <li role="presentation" class="divider"></li>
+                        <li role="presentation">
+                            <a id="loginOut" role="menuitem" tabindex="-1" href="#">退出</a>
+                        </li>
+                    </ul>
+
+                </label>
+            </li>
+        </ul>
+
+    </div>
+
+</nav>
+<div class="modal fade" id="loginModal" tabindex="1" data-backdorp="false" role="dialog" aria-labelledby="login"
+     aria-hidden="false">
+    <div class="modal-dialog" style="margin-top: 200px">
+
+        <div class="modal-content text-center" style="width: 400px;height: 300px">
+            <button id="closeModel" type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                    style="width:30px;height:30px;">
+                &times;
+            </button>
+            <div class="col-xs-12 text-center">
+                <ul id="myTab" class="nav nav-tabs">
+                    <li class="active list-inline">
+                        <a class="btn btn-default" style="width: 180px;" href="#home" data-toggle="tab">登录</a>
+                    </li>
+                    <li class="list-inline">
+                        <a class="btn btn-default" style="width: 186px;margin-left: 5px" href="#ios" data-toggle="tab">注册</a>
+                    </li>
+
+                </ul>
+            </div>
+            <div id="myTabContent" class="tab-content col-xs-12" style="margin-top: 30px">
+                <div class="tab-pane fade in active" id="home">
+                    <form class="form-horizontal">
+                        <label for="account" class="col-sm-3 control-label">用户名:</label>
+                        <div class="col-sm-9 form-group has-feedback">
+
+                            <input type="text" class="form-control" id="account" style="width: 250px;"
+                                   required="required">
+
+
+                        </div>
+                        <!--<label class="text-right " id="msg"></label>-->
+                        <label for="password" class="col-sm-3 control-label">密码:</label>
+                        <div class="col-sm-9 form-group">
+                            <input type="password" class="form-control" id="password" style="width: 250px"
+                                   required="required">
+
+                        </div>
+                        <div class="text-center col-sm-12 form-group">
+                            <label class="msg label label-danger"></label>
+                        </div>
+                        <div class="col-xs-12">
+                            <button type="button" id="login" class="btn-primary">登录</button>
+                        </div>
+
+                    </form>
+                </div>
+                <div class="tab-pane fade col-xs-12" id="ios">
+                    <form class="form-horizontal">
+                        <label for="account" class="col-sm-3 control-label">用户名:</label>
+                        <div class="col-sm-9 form-group has-feedback">
+
+                            <input type="text" class="form-control" id="registeraccount" style=";width: 250px;"
+                                   required="required">
+
+
+                        </div>
+                        <!--<label class="text-right " id="msg"></label>-->
+                        <label for="password" class="col-sm-3 control-label">密码:</label>
+                        <div class="col-sm-9 form-group">
+                            <input type="password" class="form-control" id="registerpassword" style="width: 250px"
+                                   required="required">
+
+                        </div>
+                        <div class="text-center col-sm-12 form-group">
+                            <label class="msg label label-danger"></label>
+                        </div>
+
+                        <div class="col-xs-12">
+                            <button type="button" id="register" class="btn-primary">注册</button>
+                        </div>
+                    </form>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+<div>
+    <div id="text"></div>
+</div>
+<script>
+    $(document).ready(function () {
+        tinymce.init({
+            selector:'div#text',
+            language:'zh_CN',
+            browser_spellcheck: true,
+            contextmenu: false,
+            theme_advanced_resizing:false,
+            height:500,
+            width:600,
+            "plugins": [
+                "advlist autolink link image lists charmap print hr anchor pagebreak spellchecker",
+                "searchreplace visualblocks visualchars code fullscreen media nonbreaking",
+                "table directionality emoticons template textcolor paste textcolor colorpicker textpattern"
+            ],
+            "toolbar_items_size": "small",
+            "block_formats": "Paragraph=p;Heading 1=h1;Heading 2=h2;Heading 3=h3;Heading 4=h4;Heading 5=h5;Heading 6=h6;",
+            "toolbar1": "insertfile undo redo | formatselect | bullist numlist | link unlink | uploadimg image media | fullscreen",
+            "toolbar2": "fontsizeselect | forecolor backcolor | bold italic underline strikethrough | alignleft aligncenter alignright alignjustify | outdent indent | removeformat"
+
+        })
+    })
+
+</script>
+</body>
+</html>

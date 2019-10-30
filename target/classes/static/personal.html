@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>个人中心</title>
+</head>
+<body id="body">
+<LINK href="/bootstrap-3.3.7/css/bootstrap.css" rel="stylesheet">
+<link href="/css/style.css" rel="stylesheet">
+<script src="/jquery/jquery-3.4.1.js"></script>
+<script src="/bootstrap-3.3.7/js/bootstrap.js"></script>
+<nav class="navbar navbar-default">
+    <div class="container">
+        <div class="navbar-header">
+            <a href="#" class="navbar-brand">个人博客</a>
+        </div>
+
+        <ul class="nav navbar-nav">
+            <li><a href="index.html">首页</a></li>
+            <li><a href="#">资料</a></li>
+            <!--<li><a href="#">试试</a></li>-->
+            <li><a href="#">资讯</a></li>
+            <li><a href="#" class="inline">文件</a></li>
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+            <!--登录后弹出-->
+            <li id="user">
+                <label class="dropdown" style="margin-top: 8px">
+                    <label class="btn dropdown-toggle" id="username" data-toggle="dropdown">
+
+                    </label>
+                    <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
+                        <li role="presentation">
+                            <a role="menuitem" tabindex="-1" href="personal.html">个人中心</a>
+                        </li>
+                        <li role="presentation">
+                            <a role="menuitem" tabindex="-1" href="#">我的博客</a>
+                        </li>
+                        <li role="presentation">
+                            <a role="menuitem" tabindex="-1" href="#">消息</a>
+                        </li>
+                        <li role="presentation" class="divider"></li>
+                        <li role="presentation">
+                            <a id="loginOut" role="menuitem" tabindex="-1">退出</a>
+                        </li>
+                    </ul>
+
+                </label>
+            </li>
+        </ul>
+
+    </div>
+</nav>
+<div class="container">
+    <div class="row">
+        <div class="col-xs-12">
+            <ul id="myTab" class="nav nav-tabs">
+                <li class="active">
+                    <a href="#personal-data" data-toggle="tab" id="personal-datas">个人资料</a>
+                </li>
+                <li><a href="#personal-collect" data-toggle="tab">我的收藏</a></li>
+                <li><a href="#personal-blog" data-toggle="tab">我的博客</a></li>
+                <li><a href="#personal-msg" data-toggle="tab">我的消息</a></li>
+                <li><a href="#personal-files" data-toggle="tab">我的文件</a></li>
+            </ul>
+
+
+            <div class="col-xs-12 tab-content">
+                <div class="tab-pane fade in active line" id="personal-data">
+                    <!--<div class="panel panel-default col-xs-12">-->
+                    <div class="panel-heading col-xs-10"><h3>个人资料</h3></div>
+                    <div class="panel-heading col-xs-2"><button class="btn btn-primary" id="user-update" data-toggle="modal" data-target="#updateModal">修改资料</button></div>
+                    <div class="col-xs-12 panel-body">
+                        <div class="col-xs-2"><img src="">头像</div>
+                        <div class="col-xs-5">
+                            <dl class="dl-horizontal info">
+
+                                <dt>用户名</dt>
+                                <dd class="user-account"></dd>
+
+                                <dt>昵称</dt>
+                                <dd class="nike-name"></dd>
+
+                                <dt>性别</dt>
+                                <dd class="sex"></dd>
+
+                                <dt>年龄</dt>
+                                <dd class="age"></dd>
+
+                                <dt>电话</dt>
+                                <dd class="phone"></dd>
+
+                                <dt>邮箱</dt>
+                                <dd class="email"></dd>
+
+
+                            </dl>
+                        </div>
+                        <div class="col-xs-5">
+                            <dl class="dl-horizontal info">
+                                <dt>注册时间</dt>
+                                <dd class="create-time"></dd>
+
+                                <dt>最后登录时间</dt>
+                                <dd class="login-time"></dd>
+                                <dt></dt>
+                                <dd></dd>
+
+                                <dt></dt>
+                                <dd></dd>
+
+                                <dt></dt>
+                                <dd></dd>
+
+                                <dt></dt>
+                                <dd></dd>
+
+
+                            </dl>
+                        </div>
+                    </div>
+
+                    <!--</div>-->
+                </div>
+                <div class="tab-pane fade line" id="personal-collect">
+
+                    <div class="panel-heading col-xs-12"><h3>我的收藏</h3></div>
+                    <div class="col-xs-12 panel-body">
+
+                    </div>
+
+
+                </div>
+
+                <div class="tab-pane fade line" id="personal-blog">
+
+                    <div class="panel-heading col-xs-12"><h3>我的博客</h3></div>
+                    <div class="col-xs-12 panel-body">
+
+                    </div>
+                </div>
+                <div class="tab-pane fade line" id="personal-msg">
+                    <div class="panel-heading col-xs-12"><h3>我的消息</h3></div>
+                    <div class="col-xs-12 panel-body">
+
+                    </div>
+                </div>
+                <div class="tab-pane fade line" id="personal-files">
+                    <div class="panel-heading col-xs-12"><h3>我的文件</h3></div>
+                    <div class="col-xs-12 panel-body">
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal fade" id="updateModal" tabindex="1" data-backdorp="false" role="dialog" aria-labelledby="updateModal"
+     aria-hidden="false">
+    <div class="modal-dialog" style="margin-top: 100px">
+
+        <div class="modal-content text-center" style="width: 800px;height: 400px">
+
+                <button id="closeModel" type="button" class="close" data-dismiss="modal" aria-hidden="true" style="width:30px;height:30px;">
+                    &times;
+                </button>
+            <div class="col-xs-12">
+                <label class="label label-info">修改资料</label>
+            </div>
+            <div style="margin-top: 30px">
+                <div class="col-xs-5">
+                    <dl class="dl-horizontal info">
+
+                        <dt>用户名</dt>
+                        <dd class="user-account"></dd>
+
+                        <dt>昵称</dt>
+                        <dd><input type="text" id="nike-name"></dd>
+
+                        <dt>性别</dt>
+                        <dd>
+                            <input type="radio" name="sex" value="1">男
+                            <input type="radio" name="sex" value="0">女
+                        </dd>
+
+
+                        <dt>年龄</dt>
+                        <dd>
+                            <input type="text" id="age">
+                        </dd>
+
+                        <dt>电话</dt>
+                        <dd><input type="text" id="phone"></dd>
+
+                        <dt>邮箱</dt>
+                        <dd><input type="text" id="email"></dd>
+
+
+                    </dl>
+                </div>
+                <div class="col-xs-5">
+                    <dl class="dl-horizontal info">
+                        <dt>注册时间</dt>
+                        <dd class="create-time"></dd>
+
+                        <dt>最后登录时间</dt>
+                        <dd class="login-time"></dd>
+                        <dt></dt>
+                        <dd></dd>
+
+                        <dt></dt>
+                        <dd></dd>
+
+                        <dt></dt>
+                        <dd></dd>
+
+                        <dt></dt>
+                        <dd> </dd>
+
+
+                    </dl>
+                </div>
+                <div class="col-xs-12" style="margin-top: 20px">
+                    <button class="btn btn-primary" id="update-user">确定</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+<script>
+
+    $(document).ready(function () {
+
+        var user_data = JSON.parse(window.sessionStorage.getItem("data"));
+
+        console.log(window.sessionStorage.getItem("data"));
+        if (user_data==null){
+
+            alert("请先登录")
+
+            window.location="index.html";
+        }
+        var object = user_data.object;
+
+        if (object != null) {
+            $("#username").html(object.nikename);
+            $(".user-account").html(object.account);
+            if (object.sex == 1) {
+                $(".sex").html("男");
+                // $("#sex").attr("checked",true);
+                $("input:radio[name='sex']").eq(0).attr("checked",true);
+            } else if (object.sex == 0) {
+                $(".sex").html("女");
+                // $("#sex").attr("checked",true);
+                $("input:radio[name='sex']").eq(1).attr("checked",true);
+            }
+            $("#user-account").val(object.account);
+            $("#phone").val(object.phone);
+            $("#email").val(object.email);
+            $("#age").val(object.age);
+            $("#nike-name").val(object.nikename);
+            $("#login-time").val(object.logintime);
+            $("#create-time").val(object.create_time);
+
+            $(".phone").html(object.phone);
+            $(".email").html(object.email);
+            $(".age").html(object.age);
+            $(".nike-name").html(object.nikename);
+            $(".login-time").html(object.logintime);
+            $(".create-time").html(object.create_time);
+        }
+        console.log(object)
+        if (user_data != null) {
+            $("#user").css("display", "block");
+            $("#username").html(object.nikename);
+            $("#loginOut").click(function () {
+                $.ajax({
+                    url: "/user/loginout",
+                    type: "POST",
+                    data: "id=" + object.id,
+                    success: function (data) {
+                        console.log(data.code + "," + data.msg)
+                        if (data.code == 200) {
+                            window.sessionStorage.clear();
+                            window.location = "index.html";
+
+                        }
+
+                    }
+                })
+            })
+        };
+
+        $('a[data-toggle="tab"]').on('shown.bs.tab', function (e) {
+            var id = $(e.target).attr("href");
+
+            if (id == "#personal-data") {
+                console.log("personal-data")
+
+            }
+            if (id == "#personal-files") {
+                console.log("personal-files")
+            }
+            if (id == "#personal-msg") {
+                console.log("personal-msg")
+            }
+            if (id == "#personal-blog") {
+                console.log("personal-blog")
+            }
+            if (id == "#personal-collect") {
+                console.log("personal-collect")
+            }
+
+        })
+        $("#update-user").click(function () {
+            var sex;
+
+            var man=$("input:radio[name='sex']:checked").val() ;
+            var women=$("input:radio[name='sex']:checked").val() ;
+
+            if (man != null){
+                sex=man;
+            }else if (women !=null){
+                sex=women;
+            }
+            var data={
+                "id":object.id,
+                "phone": $("#phone").val(),
+                "email": $("#email").val(),
+                "age": $("#age").val(),
+                "nikename": $("#nike-name").val(),
+                "sex":sex,
+            }
+            console.log(data);
+            $.ajax({
+                url:"/user/updateUser",
+                dataType:"json",
+                type:"POST",
+                contentType:"application/json",
+                data:JSON.stringify(data),
+                success:function (data) {
+
+                    // console.log(data)
+                    var object = data.object;
+                    if (object.sex == 1) {
+                        $(".sex").html("男");
+
+                    } else if (object.sex == 0) {
+                        $(".sex").html("女");
+
+                    }
+                    $("#username").html(object.nikename);
+                    $("#user-account").html(object.nikename);
+                    $(".user-account").html(object.account);
+                    $(".phone").html(object.phone);
+                    $(".email").html(object.email);
+                    $(".age").html(object.age);
+                    $(".nike-name").html(object.nikename);
+                    $(".login-time").html(object.logintime);
+                    $(".create-time").html(object.create_time);
+                    $("#closeModel").click();
+                    window.sessionStorage.setItem("data",JSON.stringify(data));
+                    // window.location="/personal.html";
+                }
+            })
+        })
+
+    })
+</script>
+</body>
+</html>

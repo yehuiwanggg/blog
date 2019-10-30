@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.yhw.blog.mapper.UserMapper">
+    <resultMap id="BaseResultMap" type="com.yhw.blog.entity.User">
+        <id column="id" property="id" jdbcType="INTEGER"></id>
+        <result column="account" property="account" jdbcType="VARCHAR"></result>
+        <result column="password" property="password" jdbcType="VARCHAR"></result>
+        <result column="nikename" property="nikename" jdbcType="VARCHAR"></result>
+        <result column="age" property="age" jdbcType="INTEGER"></result>
+        <result column="sex" property="sex" jdbcType="INTEGER"></result>
+        <result column="img" property="img" jdbcType="VARCHAR"></result>
+        <result column="phone" property="phone" jdbcType="VARCHAR"></result>
+        <result column="create_time" property="create_time" jdbcType="TIMESTAMP"></result>
+        <result column="logintime" property="logintime" jdbcType="TIMESTAMP"></result>
+        <result column="del" property="del" jdbcType="INTEGER"></result>
+        <result column="rolename" property="rolename" jdbcType="VARCHAR"></result>
+        <result column="pername" property="pername" jdbcType="VARCHAR"></result>
+        <result column="email" property="email" jdbcType="VARCHAR"></result>
+        <!--result column="create_time" property="create_time" jdbcType="TIMESTAMP"></result-->
+
+    </resultMap>
+    <!--用户注册-->
+    <insert id="insertUser" parameterType="com.yhw.blog.entity.User"  useGeneratedKeys="true" keyProperty="id">
+        insert into user(account,password,nikename) values (#{account},#{password},#{account} )
+    </insert>
+    <!--检查账号是否可用-->
+    <select id="checkAccount" parameterType="java.lang.String" resultType="INTEGER">
+        select count(id) from user where account=#{account}
+    </select>
+    <!--登录-->
+    <select id="login" parameterType="com.yhw.blog.entity.User" resultMap="BaseResultMap">
+        select id,account,nikename,age,sex,phone,create_time,logintime,del,img from user  where account=#{account} and password=#{password}
+    </select>
+    <select id="getUser" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+        select id,account,nikename,age,sex,phone,create_time,logintime,del,img from user  where id=#{id}
+    </select>
+    <!--登录日志-->
+    <update id="loginlog" parameterType="java.lang.String">
+        update user set logintime=now() where account=#{account}
+    </update>
+    <!--查询用户角色信息-->
+    <select id="getUserRole" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+        select u.id,u.nikename,r.rolename from user u,role r,roleuser ru where r.id=ru.roleid and u.id=ru.userid and r.id=#{id}
+    </select>
+    <!--查询用户权限信息-->
+    <select id="getUserPermission"  parameterType="java.lang.Integer" resultMap="BaseResultMap">
+         select u.id,u.nikename,r.rolename,p.pername from user u,role r,roleuser ru,permission p,rolepermission rp
+         where r.id=ru.roleid and u.id=ru.userid and r.id=1 and p.id=rp.perid and r.id=rp.roleid
+    </select>
+    <!--注册默认普通用户-->
+    <insert id="roleUser" parameterType="java.lang.Integer">
+        insert into roleuser(roleid,userid) values (3,#{userid})
+    </insert>
+    <!--修改用户数据-->
+    <update id="updateUser" parameterType="com.yhw.blog.entity.User">
+        update user
+        <trim prefix="set" prefixOverrides=",">
+            <if test="nikename!=null">nikename=#{nikename},</if>
+            <if test="sex!=null">sex=#{sex},</if>
+            <if test="age!=null">age=#{age},</if>
+            <if test="phone!=null">phone=#{phone},</if>
+            <if test="email!=null">email=#{email}</if>
+
+        </trim>
+        where id=#{id}
+    </update>
+</mapper>

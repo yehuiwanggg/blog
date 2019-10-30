@@ -1,0 +1,30 @@
+.info {
+    display: block;
+    max-height: 18px;
+    /*overflow: hidden;*/
+    font-size: 13px;
+    color: #838a9d;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+
+}
+.info dd {
+    padding: 10px;
+}
+.info dt {
+    padding: 10px;
+}
+a:hover {
+    text-decoration: none;
+    color: #8c8c8c;
+}
+
+a:focus {
+    text-decoration: none;
+    color: #8c8c8c;
+}
+
+a {
+    text-decoration: none;
+    color: #8c8c8c;
+}

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.yhw.blog.mapper.ActionLogMapper">
+    <resultMap id="BaseResultMap" type="com.yhw.blog.entity.ActionLog">
+        <id column="id" property="id" jdbcType="INTEGER"></id>
+        <result column="action" property="action" jdbcType="VARCHAR"></result>
+        <result column="atime" property="atime" jdbcType="TIMESTAMP"></result>
+        <result column="userid" property="userid" jdbcType="INTEGER"></result>
+        <!--result column="create_time" property="create_time" jdbcType="TIMESTAMP"></result-->
+
+    </resultMap>
+    <insert id="insertLog" parameterType="com.yhw.blog.entity.ActionLog" useGeneratedKeys="true">
+        insert into actionlog(action,userid) values (#{action},#{userid})
+    </insert>
+    <select id="getActionLogList" resultMap="BaseResultMap">
+        select * from actionlog
+    </select>
+</mapper>

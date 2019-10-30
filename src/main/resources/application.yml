@@ -1,0 +1,32 @@
+server:
+  port: 8123
+
+spring:
+  datasource:
+    url: jdbc:mysql://localhost:3306/blog?useUnicode=true&useSSL=false&characterEncoding=utf8&serverTimezone=Asia/Shanghai
+    username: project
+    password: project
+    driver-class-name: com.mysql.jdbc.Driver
+    type: com.alibaba.druid.pool.DruidDataSource
+  devtools:
+    restart:
+      enabled: true
+      additional-paths: src/main/java
+      quiet-period: 1ms
+  thymeleaf:
+    prefix: classpath:/templates/
+    suffix: .html
+    mode: HTML
+  resources:
+    static-locations: classpath:/static/
+#  后端传到前端时时间格式错误，需设置springboot中jackson的时区
+  jackson:
+    time-zone: GMT+8
+    date-format: yyyy-MM-dd HH:mm:ss
+
+
+mybatis:
+  mapper-locations: classpath:mapper/**/*Mapper.xml
+  type-aliases-package: com.yhw.blog.entity
+logging:
+  config: classpath:log4j2.xml

@@ -1,0 +1,89 @@
+2019-09-16 17:01:26.000 INFO Starting App on DESKTOP-JRN78DJ with PID 17948 (D:\yehuiwang\blog\target\classes started by yehuiwang in D:\yehuiwang\blog)
+2019-09-16 17:01:26.016 INFO No active profile set, falling back to default profiles: default
+2019-09-16 17:01:26.112 INFO Refreshing org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@383bfa16: startup date [Mon Sep 16 17:01:26 CST 2019]; root of context hierarchy
+2019-09-16 17:01:28.664 INFO Tomcat initialized with port(s): 8123 (http)
+2019-09-16 17:01:28.678 INFO Initializing ProtocolHandler ["http-nio-8123"]
+2019-09-16 17:01:28.689 INFO Starting service [Tomcat]
+2019-09-16 17:01:28.689 INFO Starting Servlet Engine: Apache Tomcat/8.5.31
+2019-09-16 17:01:28.700 INFO The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [C:\Program Files\Java\jdk1.8.0_161\bin;C:\WINDOWS\Sun\Java\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\ProgramData\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;"C:\Program Files\Java\jdk1.8.0_161;";C:\Program Files\Git\cmd;C:\Program Files\TortoiseGit\bin;C:\Program Files\MySQL\MySQL Server 5.7\bin;C:\Program Files (x86)\Microsoft SQL Server\100\Tools\Binn\;C:\Program Files\Microsoft SQL Server\100\Tools\Binn\;C:\Program Files\Microsoft SQL Server\100\DTS\Binn\;C:\Program Files\Microsoft\Web Platform Installer\;D:\maven\apache-maven-3.5.3\bin;C:\Program Files\MongoDB\Server\3.6\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files\Java\jdk1.8.0_161\bin;C:\Program Files (x86)\Microsoft SQL Server\100\Tools\Binn\VSShell\Common7\IDE\;C:\Program Files (x86)\Microsoft SQL Server\100\DTS\Binn\;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files\nodejs\;C:\Users\yehuiwang\.windows-build-tools\python27;C:\Program Files\PuTTY\;C:\Users\yehuiwang\.windows-build-tools\python27\;C:\Users\yehuiwang\AppData\Local\Microsoft\WindowsApps;;C:\Users\yehuiwang\AppData\Local\Programs\Fiddler;C:\Users\yehuiwang\AppData\Roaming\npm;C:\Users\yehuiwang\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\yehuiwang\AppData\Local\Microsoft\WindowsApps;.]
+2019-09-16 17:01:28.883 INFO Initializing Spring embedded WebApplicationContext
+2019-09-16 17:01:28.884 INFO Root WebApplicationContext: initialization completed in 2775 ms
+2019-09-16 17:01:29.056 INFO Servlet dispatcherServlet mapped to [/]
+2019-09-16 17:01:29.060 INFO Mapping filter: 'characterEncodingFilter' to: [/*]
+2019-09-16 17:01:29.061 INFO Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2019-09-16 17:01:29.061 INFO Mapping filter: 'httpPutFormContentFilter' to: [/*]
+2019-09-16 17:01:29.061 INFO Mapping filter: 'requestContextFilter' to: [/*]
+2019-09-16 17:01:29.590 INFO Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2019-09-16 17:01:29.850 INFO Looking for @ControllerAdvice: org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@383bfa16: startup date [Mon Sep 16 17:01:26 CST 2019]; root of context hierarchy
+2019-09-16 17:01:29.917 INFO Mapped "{[/user/register]}" onto public com.yhw.blog.util.ResponseData com.yhw.blog.controller.UserController.register(com.yhw.blog.entity.User)
+2019-09-16 17:01:29.918 INFO Mapped "{[/user/login]}" onto public com.yhw.blog.util.ResponseData com.yhw.blog.controller.UserController.getUser(com.yhw.blog.entity.User)
+2019-09-16 17:01:29.920 INFO Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+2019-09-16 17:01:29.923 INFO Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2019-09-16 17:01:29.957 INFO Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2019-09-16 17:01:29.957 INFO Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2019-09-16 17:01:30.247 INFO Registering beans for JMX exposure on startup
+2019-09-16 17:01:30.248 INFO Bean with name 'dataSource' has been autodetected for JMX exposure
+2019-09-16 17:01:30.253 INFO Located MBean 'dataSource': registering with JMX server as MBean [com.alibaba.druid.pool:name=dataSource,type=DruidDataSource]
+2019-09-16 17:01:30.264 INFO Starting ProtocolHandler ["http-nio-8123"]
+2019-09-16 17:01:30.276 INFO Using a shared selector for servlet write/read
+2019-09-16 17:01:30.290 INFO Tomcat started on port(s): 8123 (http) with context path ''
+2019-09-16 17:01:30.294 INFO Started App in 4.713 seconds (JVM running for 5.743)
+2019-09-16 17:01:33.335 INFO Initializing Spring FrameworkServlet 'dispatcherServlet'
+2019-09-16 17:01:33.335 INFO FrameworkServlet 'dispatcherServlet': initialization started
+2019-09-16 17:01:33.362 INFO FrameworkServlet 'dispatcherServlet': initialization completed in 26 ms
+2019-09-16 17:01:33.638 INFO {dataSource-1} inited
+2019-09-16 17:01:44.698 INFO Starting App on DESKTOP-JRN78DJ with PID 19420 (D:\yehuiwang\blog\target\classes started by yehuiwang in D:\yehuiwang\blog)
+2019-09-16 17:01:44.703 INFO No active profile set, falling back to default profiles: default
+2019-09-16 17:01:44.849 INFO Refreshing org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@383bfa16: startup date [Mon Sep 16 17:01:44 CST 2019]; root of context hierarchy
+2019-09-16 17:01:51.913 INFO Starting App on DESKTOP-JRN78DJ with PID 11296 (D:\yehuiwang\blog\target\classes started by yehuiwang in D:\yehuiwang\blog)
+2019-09-16 17:01:51.918 INFO No active profile set, falling back to default profiles: default
+2019-09-16 17:01:52.024 INFO Refreshing org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@383bfa16: startup date [Mon Sep 16 17:01:52 CST 2019]; root of context hierarchy
+2019-09-16 17:01:52.910 DEBUG Identified candidate component class: file [D:\yehuiwang\blog\target\classes\com\yhw\blog\mapper\UserMapper.class]
+2019-09-16 17:01:52.910 DEBUG Identified candidate component class: file [D:\yehuiwang\blog\target\classes\com\yhw\blog\mapper\UserMapper.class]
+2019-09-16 17:01:52.913 DEBUG Creating MapperFactoryBean with name 'userMapper' and 'com.yhw.blog.mapper.UserMapper' mapperInterface
+2019-09-16 17:01:52.913 DEBUG Creating MapperFactoryBean with name 'userMapper' and 'com.yhw.blog.mapper.UserMapper' mapperInterface
+2019-09-16 17:01:52.917 DEBUG Enabling autowire by type for MapperFactoryBean with name 'userMapper'.
+2019-09-16 17:01:52.917 DEBUG Enabling autowire by type for MapperFactoryBean with name 'userMapper'.
+2019-09-16 17:01:54.506 INFO Tomcat initialized with port(s): 8123 (http)
+2019-09-16 17:01:54.525 INFO Initializing ProtocolHandler ["http-nio-8123"]
+2019-09-16 17:01:54.537 INFO Starting service [Tomcat]
+2019-09-16 17:01:54.537 INFO Starting Servlet Engine: Apache Tomcat/8.5.31
+2019-09-16 17:01:54.548 INFO The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [C:\Program Files\Java\jdk1.8.0_161\bin;C:\WINDOWS\Sun\Java\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\ProgramData\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;"C:\Program Files\Java\jdk1.8.0_161;";C:\Program Files\Git\cmd;C:\Program Files\TortoiseGit\bin;C:\Program Files\MySQL\MySQL Server 5.7\bin;C:\Program Files (x86)\Microsoft SQL Server\100\Tools\Binn\;C:\Program Files\Microsoft SQL Server\100\Tools\Binn\;C:\Program Files\Microsoft SQL Server\100\DTS\Binn\;C:\Program Files\Microsoft\Web Platform Installer\;D:\maven\apache-maven-3.5.3\bin;C:\Program Files\MongoDB\Server\3.6\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files\Java\jdk1.8.0_161\bin;C:\Program Files (x86)\Microsoft SQL Server\100\Tools\Binn\VSShell\Common7\IDE\;C:\Program Files (x86)\Microsoft SQL Server\100\DTS\Binn\;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files\nodejs\;C:\Users\yehuiwang\.windows-build-tools\python27;C:\Program Files\PuTTY\;C:\Users\yehuiwang\.windows-build-tools\python27\;C:\Users\yehuiwang\AppData\Local\Microsoft\WindowsApps;;C:\Users\yehuiwang\AppData\Local\Programs\Fiddler;C:\Users\yehuiwang\AppData\Roaming\npm;C:\Users\yehuiwang\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\yehuiwang\AppData\Local\Microsoft\WindowsApps;.]
+2019-09-16 17:01:54.736 INFO Initializing Spring embedded WebApplicationContext
+2019-09-16 17:01:54.736 INFO Root WebApplicationContext: initialization completed in 2715 ms
+2019-09-16 17:01:54.910 INFO Servlet dispatcherServlet mapped to [/]
+2019-09-16 17:01:54.914 INFO Mapping filter: 'characterEncodingFilter' to: [/*]
+2019-09-16 17:01:54.914 INFO Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2019-09-16 17:01:54.914 INFO Mapping filter: 'httpPutFormContentFilter' to: [/*]
+2019-09-16 17:01:54.915 INFO Mapping filter: 'requestContextFilter' to: [/*]
+2019-09-16 17:01:55.241 DEBUG Scanned package: 'com.yhw.blog.entity' for aliases
+2019-09-16 17:01:55.241 DEBUG Scanned package: 'com.yhw.blog.entity' for aliases
+2019-09-16 17:01:55.335 DEBUG Parsed mapper file: 'file [D:\yehuiwang\blog\target\classes\mapper\user\UserMapper.xml]'
+2019-09-16 17:01:55.335 DEBUG Parsed mapper file: 'file [D:\yehuiwang\blog\target\classes\mapper\user\UserMapper.xml]'
+2019-09-16 17:01:55.486 INFO Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2019-09-16 17:01:55.747 INFO Looking for @ControllerAdvice: org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@383bfa16: startup date [Mon Sep 16 17:01:52 CST 2019]; root of context hierarchy
+2019-09-16 17:01:55.828 INFO Mapped "{[/user/register]}" onto public com.yhw.blog.util.ResponseData com.yhw.blog.controller.UserController.register(com.yhw.blog.entity.User)
+2019-09-16 17:01:55.829 INFO Mapped "{[/user/login]}" onto public com.yhw.blog.util.ResponseData com.yhw.blog.controller.UserController.getUser(com.yhw.blog.entity.User)
+2019-09-16 17:01:55.832 INFO Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+2019-09-16 17:01:55.833 INFO Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2019-09-16 17:01:55.868 INFO Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2019-09-16 17:01:55.870 INFO Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2019-09-16 17:01:56.228 INFO Registering beans for JMX exposure on startup
+2019-09-16 17:01:56.230 INFO Bean with name 'dataSource' has been autodetected for JMX exposure
+2019-09-16 17:01:56.236 INFO Located MBean 'dataSource': registering with JMX server as MBean [com.alibaba.druid.pool:name=dataSource,type=DruidDataSource]
+2019-09-16 17:01:56.248 INFO Starting ProtocolHandler ["http-nio-8123"]
+2019-09-16 17:01:56.261 INFO Using a shared selector for servlet write/read
+2019-09-16 17:01:56.277 INFO Tomcat started on port(s): 8123 (http) with context path ''
+2019-09-16 17:01:56.281 INFO Started App in 4.806 seconds (JVM running for 5.879)
+2019-09-16 17:02:02.741 INFO Initializing Spring FrameworkServlet 'dispatcherServlet'
+2019-09-16 17:02:02.741 INFO FrameworkServlet 'dispatcherServlet': initialization started
+2019-09-16 17:02:02.768 INFO FrameworkServlet 'dispatcherServlet': initialization completed in 27 ms
+2019-09-16 17:02:02.912 DEBUG Creating a new SqlSession
+2019-09-16 17:02:02.912 DEBUG Creating a new SqlSession
+2019-09-16 17:02:02.921 DEBUG SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@643f203f] was not registered for synchronization because synchronization is not active
+2019-09-16 17:02:02.921 DEBUG SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@643f203f] was not registered for synchronization because synchronization is not active
+2019-09-16 17:02:03.065 INFO {dataSource-1} inited
+2019-09-16 17:02:03.306 DEBUG JDBC Connection [com.mysql.jdbc.JDBC4Connection@38e93daa] will not be managed by Spring
+2019-09-16 17:02:03.306 DEBUG JDBC Connection [com.mysql.jdbc.JDBC4Connection@38e93daa] will not be managed by Spring
+2019-09-16 17:02:03.336 DEBUG Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@643f203f]
+2019-09-16 17:02:03.336 DEBUG Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@643f203f]
